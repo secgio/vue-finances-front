@@ -1,0 +1,43 @@
+# import * from './Operation.gql'
+
+mutation RecordsEdit (
+  $description: String!,
+  $amount: Float!,
+  $date: Date!,
+  $accountId: ID!,
+  $categoryId: ID!,
+  $type: Operation!,
+  $tags: String,
+  $note: String 
+  $id: ID!
+){
+  editRecord(
+    description: $description,
+    amount: $amount,
+    date: $date,
+    accountId: $accountId
+    categoryId:  $categoryId
+    type: $type,
+    tags: $tags,
+    note: $note 
+    id: $id 
+  ) {
+    id
+    date
+    description
+    amount
+    type
+    user{
+      id
+      name
+    }
+    category{
+      id
+      description
+    }
+    account{
+      id
+      description
+    }
+  }
+}

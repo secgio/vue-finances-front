@@ -1,0 +1,10 @@
+mutation RecordDelete ($id: ID!) {
+  deleteRecord( id: $id ){
+    id
+    description
+    date
+    amount
+  }
+}
+
+
